@@ -1,0 +1,2 @@
+set hintchars=hjklasdfgyuiopqwertnmzxcvb
+highlight Hint font-family:helvetica;font-size:11pt;color:white;background-color:red;padding:0px 1px;

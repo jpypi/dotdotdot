@@ -1,0 +1,7 @@
+[user]
+	name = James Jenkins
+	email = applesmacs@yahoo.com
+[push]
+	default = simple
+[alias]
+	st = status
