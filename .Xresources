@@ -1,0 +1,34 @@
+! Colors
+Rxvt.background: #0d0d0d
+Rxvt.foreground: #f1f1f1
+URxvt.color4: #4183c4
+URxvt.color12: #4183c4
+
+! Transparancy
+URxvt.transparent: True
+URxvt.shading: 25
+
+
+! Font settings
+URxvt.font: xft:DejaVuSansMono:pixelsize=14:antialias=true:hinting=true
+URxvt.letterSpace: -1
+
+! Scrollbar settings
+Rxvt.scrollBar: False
+Rxvt.thickness: 0
+Rxvt.troughColor: black
+Rxvt.scrollBar_floating: True
+Rxvt.scrollBar_right: True
+
+
+URxvt.perl-ext-common: default,matcher
+URxvt.url-launcher: /usr/bin/firefox
+URxvt.matcher.button: 1
+URxvt.matcher.rend.0: Uline
+
+Xft.antialias: 1
+Xft.hinting: 1
+Xft.autohint: true
+!Xft.hintstyle: hintslight
+!hintfull
+Xft.rgba: rgb
