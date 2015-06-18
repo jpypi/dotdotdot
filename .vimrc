@@ -35,6 +35,7 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'wting/rust.vim'
 Plug 'tomasr/molokai'
 Plug 'kien/ctrlp.vim'
+Plug 'davidhalter/jedi-vim'
 call plug#end()
 
 color molokai
