@@ -42,7 +42,7 @@ urxvtd -q -o -f
 # use results from expr above with: xinput get-button-map {idnum}
 # Swap 4-5 to reverse vert scrolling
 # Swap 6 7 to reverse horzontal scroling
-xinput set-button-map 14 1 2 3 5 4 7 6 8 9 10 11 12
+xinput set-button-map bcm5974 1 2 3 5 4 7 6 8 9 10 11 12
 
 # Start redshift
 redshift -t 5500:3400 &
@@ -57,4 +57,4 @@ feh --bg-fill ~/Pictures/Yosemite2.jpg
 
 
 # Start i3
-exec i3
+exec i3 #--force-xinerama -V >>~/.config/i3/i3log 2>&1
