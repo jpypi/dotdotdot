@@ -36,6 +36,12 @@ twm &
 
 urxvtd -q -o -f
 
+## Screen powersave features
+## Turn off screen after 5min
+### THIS SEEMS TO BE BROKEN!
+#xset +dpms
+#xset dpms 0 0 300
+
 # Reverse the trackpad scrolling
 # https://n00bsys0p.wordpress.com/2011/07/26/reverse-xorg-scrolling-in-linux-natural-scrolling/
 # xinput list | egrep "slave.*pointer" | grep -v XTEST | sed -e 's/^.*id=//' -e 's/\s.*$//'
