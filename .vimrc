@@ -6,6 +6,7 @@ Plug 'wting/rust.vim'
 Plug 'tomasr/molokai'
 Plug 'kien/ctrlp.vim'
 Plug 'davidhalter/jedi-vim'
+Plug 'ervandrew/supertab'
 call plug#end()
 
 
