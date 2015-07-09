@@ -24,7 +24,7 @@ set expandtab
 "This makes backspace remove N spaces
 set softtabstop=4
 
-"
+" Removes "tabs" (spaces) correctly
 set backspace=2
 
 " Set up fancy numbering
@@ -32,6 +32,10 @@ set number
 set relativenumber
 
 map Y y$
+
+set undofile
+set undodir=~/.vim/tmp/undo//
+" set dir=~/.vim/tmp/swp//
 
 "setkey ctrl-space ctrl-p
 "set \ esc
