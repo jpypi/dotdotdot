@@ -8,7 +8,7 @@ alias moshko="mosh themind@yakko.cs.wmich.edu"
 
 # Only for OSX
 if [ -z (which lsb_release) ]
-    alias subl="/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl"
+    alias subl="/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl"
 end
 
 alias ll="ls -lh"
