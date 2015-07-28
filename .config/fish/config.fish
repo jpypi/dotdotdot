@@ -3,6 +3,7 @@ alias outpi="ssh pi@perplexed.duckdns.org -p " # Note: put correct port in
 alias sshpi="ssh pi@192.168.1.102"
 alias yakko="ssh themind@yakko.cs.wmich.edu"
 alias moshko="mosh themind@yakko.cs.wmich.edu"
+alias st="git status"
 
 # Application aliases
 
