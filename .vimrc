@@ -45,6 +45,7 @@ au FileType ruby noremap <c-r> :!ruby %<cr>
 au FileType r noremap <c-r> :!r --vanilla < %<cr>
 au FileType c noremap <c-r> :!make<cr>
 au FileType rust noremap <c-r> :!cargo build; cargo run<cr>
+au FileType go noremap <c-r> :!go run %<cr>
 
 au BufRead,BufNewFile *.pye set filetype=python
 
