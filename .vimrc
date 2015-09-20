@@ -35,14 +35,19 @@ set relativenumber
 " Super awesome search (Stole this from stringy; Thanks!)
 set incsearch
 set ignorecase
-set smartcase " intelligently go by case
+set smartcase  " intelligently search by case
 
 " The 2 things below is not compatible with "incsearch"
 " Check out https://github.com/haya14busa/incsearch.vim
-" to fix this issue
-" Pls to highlight searchs ...But let me clear the highlights
+" to fix this issue. (This is partially fixed, but could
+" possibly be better fixed by this plugin.)
 "set highlight=on
-"nnoremap <esc> :noh<return><esc>
+
+" Pls to highlight searchs ...But let me clear the highlights
+" Highlight search results
+set hlsearch
+" Clear higlighting when pressing <return>
+noremap <cr> :noh<cr>
 
 " Y iz this not the default??
 map Y y$
