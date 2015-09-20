@@ -41,8 +41,8 @@ set smartcase " intelligently go by case
 " Check out https://github.com/haya14busa/incsearch.vim
 " to fix this issue
 " Pls to highlight searchs ...But let me clear the highlights
-set highlight=on
-nnoremap <esc> :noh<return><esc>
+"set highlight=on
+"nnoremap <esc> :noh<return><esc>
 
 " Y iz this not the default??
 map Y y$
