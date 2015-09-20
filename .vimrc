@@ -32,11 +32,13 @@ set backspace=2
 set number
 set relativenumber
 
-map Y y$
+" Pls to highlight searchs
+set highlight=on
+" ...But let me clear the highlights
+nnoremap <esc> :noh<return><esc>
 
-set undofile
-set undodir=~/.vim/tmp/undo//
-" set dir=~/.vim/tmp/swp//
+" Y iz this not the default??
+map Y y$
 
 "setkey ctrl-space ctrl-p
 "set \ esc
