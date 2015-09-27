@@ -1,4 +1,3 @@
 #!/bin/sh
 
-find . | grep -v .git | xargs -I{a} diff {a} ../{a} |\
-    grep -v "Only in " | less
+find . -type f | grep -v .git | xargs -I{a} diff {a} ../{a} | grep -v "Only in " | less
