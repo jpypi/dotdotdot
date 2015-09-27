@@ -9,7 +9,7 @@ alias st="git status"
 
 # Only for OSX
 if [ -z (which lsb_release) ]
-    alias subl="/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl"
+    alias ij="/Applications/IntelliJ IDEA 14.app/Contents/MacOS/idea"
 end
 
 alias ll="ls -lh"
@@ -17,7 +17,7 @@ alias la="ll -A"
 alias lll="ls -lAh | less"
 alias pd="cd .."
 
-function ctd
+function cdt
     cd (td -d $argv)
 end
 
@@ -36,3 +36,4 @@ end
 
 set -gx PATH $PATH "$energia/bin" "$energia/mspdebug" "$custom_bin_prefix/James/Programming/bin"
 
+#fish_vi_mode
