@@ -8,7 +8,15 @@ alias st="git status"
 # Application aliases
 
 # Only for OSX
-if [ -z (which lsb_release) ]
+set platform (uname)
+set is_osx "YEP"
+if [ $platform = "Linux" ]
+    set is_osx ""
+end
+
+# Application aliases
+
+if [ -n $is_osx ]
     alias ij="/Applications/IntelliJ IDEA 14.app/Contents/MacOS/idea"
 end
 
@@ -40,7 +48,7 @@ complete -c pullpi -x -a "(ssh pi@$pi ls ~pi/fileserver)"
 # Useful variables and PATH
 
 # Depends on OSX vs. *nix
-if [ -z (which lsb_release) ]
+if [ -n $is_osx ]
     set energia "/Applications/Energia.app/Contents/Resources/Java/hardware/tools/msp430"
     set custom_bin_prefix "/Users"
 else
