@@ -22,8 +22,22 @@ function cdt
 end
 
 
-# Useful variables and PATH
+# Local fileserver
+function putpi -d "Upload a file to rpi when local."
+    set file $argv[1]
+    scp $file pi@$pi:fileserver/$file
+end
+
+function pullpi -d "Download a file from rpi when local."
+    set file $argv[1]
+    scp pi@$pi:fileserver/$file $file
+end
+
 set pi 192.168.1.102
+
+complete -c pullpi -x -a "(ssh pi@$pi ls ~pi/fileserver)"
+
+# Useful variables and PATH
 
 # Depends on OSX vs. *nix
 if [ -z (which lsb_release) ]
