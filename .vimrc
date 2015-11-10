@@ -8,6 +8,8 @@ Plug 'kien/ctrlp.vim'
 Plug 'davidhalter/jedi-vim'
 "Plug 'ervandrew/supertab'
 Plug 'scrooloose/nerdtree'
+Plug 'fatih/vim-go'
+Plug 'tpope/vim-fugitive'
 call plug#end()
 
 
@@ -55,8 +57,15 @@ map Y y$
 "setkey ctrl-space ctrl-p
 "set \ esc
 
+function! ExecutePython()
+    " Change file type
+    silent !chmod +x %
+    " Run current buffer file
+    !%:p
+endfunction
+
 " Nice "IDE-like build" shortcut
-au FileType python noremap <c-b> :!python %<cr>
+au FileType python noremap <c-b> :call ExecutePython()<cr>
 au FileType ruby noremap <c-b> :!ruby %<cr>
 au FileType r noremap <c-b> :!r --vanilla < %<cr>
 au FileType c noremap <c-b> :!make<cr>
@@ -64,5 +73,3 @@ au FileType rust noremap <c-b> :!cargo build; cargo run<cr>
 au FileType go noremap <c-b> :!go run %<cr>
 
 au BufRead,BufNewFile *.pye set filetype=python
-
-
