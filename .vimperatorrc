@@ -1,2 +1,21 @@
 set hintchars=hjklasdfgyuiopqwertnmzxcvb
 highlight Hint font-family:helvetica;font-size:11pt;color:white;background-color:red;padding:0px 1px;
+
+set editor="urxvtc -e vim"
+set gui=none,tabs
+
+colorscheme darkness
+
+map <silent> <C-i> :js toggle_bottombar()<CR>
+
+:js << EOF
+function toggle_bottombar() {
+  var bb = document.getElementById('liberator-bottombar');
+  if (!bb)
+    return;
+  bb.style.height = (bb.style.height == '') ? '0px' : '';
+  bb.style.overflow = (bb.style.height == '') ? '' : 'hidden';
+}
+EOF
+
+
