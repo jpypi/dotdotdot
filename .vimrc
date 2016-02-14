@@ -54,6 +54,9 @@ noremap <cr> :noh<cr>
 " Y iz this not the default??
 map Y y$
 
+noremap 00 ^
+noremap ^ 0
+
 "setkey ctrl-space ctrl-p
 "set \ esc
 
