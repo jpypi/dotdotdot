@@ -28,6 +28,10 @@ set tw=80
 " Make vim have the same bg as terminal
 highlight Normal ctermbg=none
 
+" Selecting won't grab line numbers
+" Scroll will behave correctly
+"set mouse=a
+
 set smartindent
 "Sets the number of columns a "tab" takes up
 set tabstop=4
