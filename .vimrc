@@ -4,18 +4,26 @@ call plug#begin('~/.vim/plugged')
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'wting/rust.vim'
 Plug 'tomasr/molokai'
-Plug 'kien/ctrlp.vim'
-Plug 'davidhalter/jedi-vim'
+"Plug 'kien/ctrlp.vim'
+"Plug 'davidhalter/jedi-vim'
 "Plug 'ervandrew/supertab'
 Plug 'scrooloose/nerdtree'
 Plug 'fatih/vim-go'
 Plug 'tpope/vim-fugitive'
+"Plug 'keith/swift.vim'
+Plug 'tpope/vim-surround'
+Plug 'terryma/vim-multiple-cursors'
 call plug#end()
 
+"inoremap # X#
 
 syntax on
 color molokai
 set colorcolumn=81
+"highlight ColorColumn ctermbg=Black
+
+" Make vim have the same bg as terminal
+highlight Normal ctermbg=none
 
 set smartindent
 "Sets the number of columns a "tab" takes up
@@ -57,8 +65,14 @@ map Y y$
 noremap 00 ^
 noremap ^ 0
 
+" Alternate escape sequence
+" imap jk <esc> :%s/ \+$//g<cr>
+
 "setkey ctrl-space ctrl-p
 "set \ esc
+
+" Strip all trailing spaces from all lines
+autocmd BufWrite * execute '%s/[ ]\+$//e'
 
 function! ExecutePython()
     " Change file type
@@ -68,11 +82,13 @@ function! ExecutePython()
 endfunction
 
 " Nice "IDE-like build" shortcut
-au FileType python noremap <c-b> :call ExecutePython()<cr>
-au FileType ruby noremap <c-b> :!ruby %<cr>
-au FileType r noremap <c-b> :!r --vanilla < %<cr>
-au FileType c noremap <c-b> :!make<cr>
-au FileType rust noremap <c-b> :!cargo build; cargo run<cr>
-au FileType go noremap <c-b> :!go run %<cr>
+au FileType python noremap ,r :call ExecutePython()<cr>
+au FileType ruby   noremap ,r :!ruby %<cr>
+au FileType r      noremap ,r :!r --vanilla < %<cr>
+au FileType c      noremap ,r :!make<cr>
+au FileType rust   noremap ,r :!cargo build; cargo run<cr>
+au FileType go     noremap ,r :!go run %<cr>
+au FileType tex    noremap ,r :!pdflatex %; open *.pdf<cr>
+au FileType dot    noremap ,r :!neato -Tpng -Gdpi=200 % > graph.png; open graph.png<cr>
 
 au BufRead,BufNewFile *.pye set filetype=python
