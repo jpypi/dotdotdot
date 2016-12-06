@@ -93,5 +93,7 @@ au FileType rust   noremap ,r :!cargo build; cargo run<cr>
 au FileType go     noremap ,r :!go run %<cr>
 au FileType tex    noremap ,r :!pdflatex %; open *.pdf<cr>
 au FileType dot    noremap ,r :!neato -Tpng -Gdpi=200 % > graph.png; open graph.png<cr>
+au FileType plot   noremap ,r :!gnuplot -p %<cr>
 
 au BufRead,BufNewFile *.pye set filetype=python
+au BufRead,BufNewFile *.plot set filetype=plot
