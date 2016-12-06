@@ -22,6 +22,9 @@ color molokai
 set colorcolumn=81
 "highlight ColorColumn ctermbg=Black
 
+" Set text wrapping to column 80
+set tw=80
+
 " Make vim have the same bg as terminal
 highlight Normal ctermbg=none
 
