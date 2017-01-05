@@ -10,14 +10,15 @@ Xft.rgba: rgb
 ! Colors
 !This is a nice color too: #282722, but the one below matches molokai :D
 !Rxvt.background: #121212
-!Rxvt.background: #0d0d0d
-Rxvt.background: #242420
-Rxvt.foreground: #f1f1f1
+Rxvt.background: #0d0d0d
+!Rxvt.background: #242420
+Rxvt.foreground: #d0d0d0
 
 URxvt.color4: #4183c4
 URxvt.color12: #4183c4
 
 ! Cursor blinking
+*blinkRate: 0
 URxvt.cursorBlink: 1
 
 ! Transparancy
