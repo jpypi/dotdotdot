@@ -1,10 +1,12 @@
 set hintchars=hjklasdfgyuiopqwertnmzxcvb
-highlight Hint font-family:helvetica;font-size:11pt;color:white;background-color:red;padding:0px 1px;
+
+colorscheme darkness
+
+highlight Hint font-family:helvetica;font-size:11pt;color:white;background-color:red;padding: 2px; border 1px solid red;
 
 set editor="urxvtc -e vim"
 set gui=none,tabs
 
-colorscheme darkness
 
 map <silent> <C-i> :js toggle_bottombar()<CR>
 
