@@ -101,3 +101,5 @@ au FileType plot   noremap ,r :!gnuplot -p %<cr>
 
 au BufRead,BufNewFile *.pye set filetype=python
 au BufRead,BufNewFile *.plot set filetype=plot
+
+autocmd FileType tex setlocal spell spelllang=en_us
