@@ -5,3 +5,5 @@
 	default = simple
 [alias]
 	st = status
+[core]
+    editor = vim
