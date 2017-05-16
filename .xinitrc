@@ -32,8 +32,6 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
     unset f
 fi
 
-twm &
-
 urxvtd -q -o -f
 
 ## Screen powersave features
@@ -41,6 +39,8 @@ urxvtd -q -o -f
 ### THIS SEEMS TO BE BROKEN!
 #xset +dpms
 #xset dpms 0 0 300
+rm .moviemode.state
+
 
 # Reverse the trackpad scrolling
 # https://n00bsys0p.wordpress.com/2011/07/26/reverse-xorg-scrolling-in-linux-natural-scrolling/
@@ -58,13 +58,16 @@ xset r rate 270 22
 # Start redshift
 redshift -t 6500:2600 &
 
-## Set a desktop background
-#feh --image-bg black --bg-max ~/pictures/firegitcommit-dark.png
-#feh --image-bg black --bg-fill ~/pictures/Yosemite.jpg
-feh --image-bg black --bg-center ~/pictures/silks/wee.png
+# Set a desktop background
+pics_path=~/Pictures/backgrounds/png
+feh --bg-fill $pics_path/$(ls $pics_path | sort -R | head -n1)
+
+volumeicon &
+nvidia-settings --load-config-only
 
 
-compton -b --no-fading-openclose &
+#compton -b --no-fading-openclose &
 
 # Start i3
-exec i3 #--force-xinerama -V >>~/.config/i3/i3log 2>&1
+#--force-xinerama
+exec i3 -V >>~/.config/i3/i3log 2>&1
