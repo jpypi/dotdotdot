@@ -65,7 +65,7 @@ set smartcase  " intelligently search by case
 " Highlight search results
 set hlsearch
 " Clear higlighting when pressing <return>
-noremap <cr> :noh<cr>
+noremap <nowait><silent> <cr> :noh<cr><cr>
 
 " Y iz this not the default??
 map Y y$
