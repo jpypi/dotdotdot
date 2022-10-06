@@ -13,6 +13,7 @@ Plug 'tpope/vim-fugitive'
 "Plug 'keith/swift.vim'
 Plug 'tpope/vim-surround'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'hashivim/vim-terraform'
 call plug#end()
 
 "inoremap # X#
