@@ -1,0 +1,116 @@
+/***
+ * Proton Tabs Tweaks
+ * about:support
+ * about:config: toolkit.legacyUserProfileCustomizations.stylesheets
+ * https://www.dedoimedo.com/computers/firefox-91-disable-proton.html
+ * https://github.com/bmFtZQ/edge-frfox
+ * https://www.userchrome.org/firefox-89-styling-proton-ui.html#tabstyler
+ * ***/
+
+/* Add margin for user to grab at top of window */
+#TabsToolbar {
+    margin-top: 8px;
+}
+
+/* [Connected Tabs] Set a max height based on min-height plus margin-block: 1px 0 */
+
+/* Adjust tab corner shape, optionally remove space below tabs */
+
+#tabbrowser-tabs {
+    --user-tab-rounding: 0px;
+}
+
+.tab-background {
+    border-radius: var(--user-tab-rounding) var(--user-tab-rounding) 0px 0px !important; /* Connected */
+    margin-block: 1px 0 !important; /* Connected */
+}
+#scrollbutton-up, #scrollbutton-down { /* 6/10/2021 */
+    border-top-width: 1px !important;
+    border-bottom-width: 0 !important;
+}
+
+/* 1/16/2022 Tone down the Fx96 tab border with add-on themes in certain fallback situations */
+.tab-background:is([selected], [multiselected]):-moz-lwtheme {
+    --lwt-tabs-border-color: rgba(0, 0, 0, 0.5) !important;
+    border-bottom-color: transparent !important;
+}
+[brighttext="true"] .tab-background:is([selected], [multiselected]):-moz-lwtheme {
+    --lwt-tabs-border-color: rgba(255, 255, 255, 0.5) !important;
+    border-bottom-color: transparent !important;
+}
+
+/* Container color bar visibility */
+.tabbrowser-tab[usercontextid] > .tab-stack > .tab-background > .tab-context-line {
+    margin: 0px max(calc(var(--user-tab-rounding) - 3px), 0px) !important;
+}
+
+/* Inactive tabs: Separator line style */
+
+.tabbrowser-tab:not([selected=true]):not([multiselected=true]):not([beforeselected-visible="true"]) .tab-background {
+    border-right: 1px solid var(--lwt-background-tab-separator-color, rgba(0, 0, 0, .20)) !important;
+}
+/* For dark backgrounds */
+[brighttext="true"] .tabbrowser-tab:not([selected=true]):not([multiselected=true]):not([beforeselected-visible="true"]) .tab-background {
+    border-right: 1px solid var(--lwt-background-tab-separator-color, var(--lwt-selected-tab-background-color, rgba(255, 255, 255, .20))) !important;
+}
+.tabbrowser-tab:not([selected=true]):not([multiselected=true]) .tab-background {
+    border-radius: 0 !important;
+}
+/* Remove padding between tabs */
+.tabbrowser-tab {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+/* Move container color bar to bottom of tab - updated 1/16/2022 */
+
+.tab-background {
+    --context-line-margin-adjust: 3px; /* 1/16/2022 */
+    --context-line-active-adjust: 1px; /* 1/16/2022 */
+}
+.tabbrowser-tab[usercontextid]:is([selected=true], [visuallyselected="true"], [multiselected]) .tab-background {
+    border-top: 1px solid transparent; /* 1/16/2022 Default border for consistency */
+}
+
+.tabbrowser-tab[usercontextid] > .tab-stack > .tab-background > .tab-context-line {
+    margin-top: calc(var(--tab-min-height) - var(--context-line-margin-adjust) - 2px) !important;
+}
+.tabbrowser-tab[usercontextid]:is([selected=true], [visuallyselected="true"], [multiselected])  > .tab-stack > .tab-background > .tab-context-line {
+    margin-top: calc(var(--tab-min-height) - var(--context-line-margin-adjust) - var(--context-line-active-adjust) - 2px) !important;
+}
+
+/* Force active tab color to toolbar color  */
+:root {
+    --lwt-selected-tab-background-color: unset !important;
+}
+
+/* Emulate blue tab line from Photon 57-88 UI */
+
+
+/* Set size and position of the bar relative to background */
+.tab-background::before {
+  content: "";
+  display: block;
+  height: 2px;
+  margin: 0px 2px;
+  /*margin: -1px var(--user-tab-rounding) 0;*/
+}
+/* Set color for active tab */
+.tabbrowser-tab[selected] .tab-background::before {
+  background-color: #0a84ff;
+}
+/* Set color for other selected tabs */
+.tabbrowser-tab[multiselected]:not([selected]) .tab-background::before {
+  background-color: color-mix(in srgb, #0a84ff 66%, transparent);
+}
+/* Set color for hovering on non-active/non-selected tabs */
+.tabbrowser-tab:not([selected], [multiselected]):hover .tab-background::before {
+  background-color: color-mix(in srgb, currentColor 33%, transparent);
+  transform: none;
+}
+
+/* [Optional] Animation when hovering non-active/non-selected tabs */
+.tabbrowser-tab:not([selected], [multiselected]) .tab-background::before {
+  transform: scaleX(.80);
+  transition: transform 70ms ease;
+}
